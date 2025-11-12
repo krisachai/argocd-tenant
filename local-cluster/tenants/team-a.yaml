@@ -25,7 +25,7 @@ spec:
       annotations:
         tenant-repo: https://github.com/krisachai/argocd-team-a.git 
     spec:
-      project: team-a
+      project: default
       source:
         repoURL: https://github.com/krisachai/argocd-team-a.git
         targetRevision: main
