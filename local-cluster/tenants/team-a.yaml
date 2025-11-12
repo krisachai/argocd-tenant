@@ -1,0 +1,41 @@
+# tenants/team-a.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: team-a
+  namespace: argocd
+  labels:
+    tenant: team-a
+    managed-by: platform-team
+spec:
+  generators:
+  - git:
+      # ✅ Tenant's repo
+      repoURL: https://github.com/krisachai/argocd-team-a.git 
+      revision: main
+      directories:
+      - path: 'apps/*'
+  
+  template:
+    metadata:
+      name: 'team-a-{{path.basename}}'
+      labels:
+        tenant: team-a
+        app: '{{path.basename}}'
+      annotations:
+        tenant-repo: https://github.com/krisachai/argocd-team-a.git 
+    spec:
+      project: team-a
+      source:
+        repoURL: https://github.com/krisachai/argocd-team-a.git
+        targetRevision: main
+        path: '{{path}}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: team-a
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true
