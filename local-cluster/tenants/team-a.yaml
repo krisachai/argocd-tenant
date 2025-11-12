@@ -18,18 +18,13 @@ spec:
   
   template:
     metadata:
-      name: 'team-a-{{path.basename}}'
-      labels:
-        tenant: team-a
-        app: '{{path.basename}}'
-      annotations:
-        tenant-repo: https://github.com/krisachai/argocd-team-a.git 
+      name: '{.path.basename}}'
     spec:
       project: default
       source:
         repoURL: https://github.com/krisachai/argocd-team-a.git
         targetRevision: main
-        path: '{{path}}'
+        path: '{{.path.path}}'
       destination:
         server: https://kubernetes.default.svc
         namespace: team-a
