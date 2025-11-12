@@ -8,6 +8,8 @@ metadata:
     tenant: team-a
     managed-by: platform-team
 spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
   generators:
   - git:
       # ✅ Tenant's repo
