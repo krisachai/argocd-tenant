@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/krisachai/argocd-tenant.git
     targetRevision: HEAD
-    path: tenants
+    path: local-cluster/tenants
     directory:
       recurse: true
   destination:
