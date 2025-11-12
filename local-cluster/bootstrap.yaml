@@ -1,7 +1,7 @@
 # argocd/tenant-applicationsets.yaml
 apiVersion: argoproj.io/v1alpha1
 kind: Application
-meta
+metadata:
   name: tenant-applicationsets
   namespace: argocd
 spec:
