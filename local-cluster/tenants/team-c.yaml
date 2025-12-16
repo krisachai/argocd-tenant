@@ -9,7 +9,7 @@ spec:
   project: 168-etax
   source:
     path: 'apps'
-    repoURL: https://github.com/krisachai/argocd-team-b.git
+    repoURL: https://github.com/krisachai/argocd-team-c.git
     targetRevision: main
   destination:
     server: https://kubernetes.default.svc
