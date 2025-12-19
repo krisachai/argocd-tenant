@@ -34,3 +34,10 @@ spec:
   destinations:
     - namespace: team-b 
       server: https://kubernetes.default.svc 
+  roles:
+  - name: team-b-read-only
+    description: Read-only privileges to team-b
+    policies:
+    - p, proj:team-b:team-b-read-only, applications, get, team-b/*, allow
+    groups:
+    - 123-team-b
