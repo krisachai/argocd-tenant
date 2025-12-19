@@ -21,3 +21,16 @@ spec:
       selfHeal: true
     syncOptions:
     - CreateNamespace=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: team-b-project
+  namespace: argocd # Must be in the Argo CD installation namespace
+spec:
+  description: Project for team-b
+  sourceRepos:
+    - '*' 
+  destinations:
+    - namespace: team-b 
+      server: https://kubernetes.default.svc 
