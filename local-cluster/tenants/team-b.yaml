@@ -6,7 +6,7 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  project: default
+  project: team-b-project
   source:
     path: 'apps'
     repoURL: https://github.com/krisachai/argocd-team-b.git
