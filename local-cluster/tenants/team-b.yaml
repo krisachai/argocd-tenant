@@ -40,6 +40,6 @@ spec:
   - name: team-b-read-only
     description: Read-only privileges to team-b
     policies:
-    - p, proj:team-b:team-b-read-only, applications, get, team-b/*, allow
+    - p, proj:team-b:team-b-read-only, applications, get, team-b-project/*, allow
     groups:
     - 123-team-b
